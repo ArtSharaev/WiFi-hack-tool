@@ -6,7 +6,7 @@ out_mas = out.split("\n")[1:-1]
 names = [e.split()[0] for e in out_mas if
          e.split()[3] == "wifi" or e.split()[2] == "wifi"]
 
-print(f"\033[94mWifi hack tool by prok0l and ArtSharaev\033[94m")
+print(f"\033[94mWi-Fi hack tool by prok0l and ArtSharaev\033[94m")
 print()
 for wifi_name in names:
     wifi_password = "None"

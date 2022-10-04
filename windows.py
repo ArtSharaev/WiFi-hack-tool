@@ -19,7 +19,7 @@ mas_not_formated: list = [line.decode('cp866', 'ignore') for line in
                           Popen(["powershell", f"netsh wlan show profiles"],
                                 stdout=PIPE).stdout.readlines()]
 
-print(f"\033[94mWifi hack tool by prok0l and ArtSharaev\033[94m")
+print(f"\033[94mWi-Fi hack tool by prok0l and ArtSharaev\033[94m")
 print()
 for i in range(9, len(mas_not_formated) - 1, 1):
     wifi_name = mas_not_formated[i].split(":")[1].strip("\n").strip()
