@@ -1,4 +1,5 @@
 import os
+import csv
 
 out = os.popen("nmcli connection show").read()
 out_mas = out.split("\n")[1:-1]
@@ -15,6 +16,9 @@ for wifi_name in names:
     for line in out.split("\n"):
         if "wireless-security.psk:" in line:
             wifi_password = line.split()[1]
+    with open("passwords.csv", mode="a", encoding="utf-8") as writing_file:
+        file_writer = csv.writer(writing_file, delimiter=";")
+        file_writer.writerow([wifi_name, wifi_password])
     p = " " * (40 - len(wifi_name))
     print(f"\033[92m{wifi_name}\x1b[m{p}\033[91m{wifi_password}\x1b[m")
 
